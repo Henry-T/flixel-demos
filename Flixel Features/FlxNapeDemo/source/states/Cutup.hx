@@ -61,7 +61,7 @@ class Cutup extends FlxNapeState
 		pieces = new FlxTypedGroup<FlxNapeSprite>();
 		var houseCnt:Int = 3;
 		for (i in 0...houseCnt) {
-			var house:FlxNapeSprite = new FlxNapeSprite(FlxG.width / 2 - 100 * (Math.floor(houseCnt / 2) - i), FlxG.height / 2, "assets/cutup/cutup_" + i + ".png");
+			var house:FlxNapeSprite = new FlxNapeSprite(FlxG.width / 2 - 100 * (Math.floor(houseCnt / 2) - i), FlxG.height / 2, "assets/cutup/cutupX_" + i + ".jpg");
 			house.body.userData.flxSprite = house;
 			pieces.add(house);
 		}
@@ -251,7 +251,7 @@ class Laser extends FlxSprite {
 		origin.set(0, pixels.height/2);
 		
 		var alphaTween:VarTween = new VarTween(function(t:FlxTween) { kill(); }, FlxTween.ONESHOT);
-		alphaTween.tween(this, "alpha", 0, 0.4, FlxEase.quadOut);
+		alphaTween.tween(this, "alpha", 0.9, 2000);
 		alphaTween.start();
 		FlxTween.manager.add(alphaTween);
 	}
